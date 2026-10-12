@@ -1,3 +1,4 @@
+# pages/checkout_page.py
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
@@ -10,12 +11,24 @@ class CheckoutPage(BasePage):
     ERROR_MESSAGE = (By.CSS_SELECTOR, "h3[data-test='error']")
 
     def fill_information(self, first_name="", last_name="", postal_code=""):
+        # Bersihkan dan isi First Name
+        fn_field = self.find(self.FIRST_NAME)
+        fn_field.clear()
         if first_name:
-            self.send_keys(self.FIRST_NAME, first_name)
+            fn_field.send_keys(first_name)
+
+        # Bersihkan dan isi Last Name
+        ln_field = self.find(self.LAST_NAME)
+        ln_field.clear()
         if last_name:
-            self.send_keys(self.LAST_NAME, last_name)
+            ln_field.send_keys(last_name)
+
+        # Bersihkan dan isi Postal Code
+        pc_field = self.find(self.POSTAL_CODE)
+        pc_field.clear()
         if postal_code:
-            self.send_keys(self.POSTAL_CODE, postal_code)
+            pc_field.send_keys(postal_code)
+
         self.click(self.CONTINUE_BTN)
 
     def click_finish(self):
