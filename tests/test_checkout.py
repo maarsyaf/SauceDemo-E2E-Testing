@@ -1,3 +1,4 @@
+# tests/test_checkout.py
 import json
 import unittest
 from selenium import webdriver
@@ -32,6 +33,8 @@ class TestCheckout(unittest.TestCase):
 
         for data in test_data:
             with self.subTest(scenario=data["scenario"]):
+                # Kembalikan ke URL Checkout Step One sebelum tes dijalankan
+                self.driver.get("https://www.saucedemo.com/checkout-step-one.html")
                 self.checkout_page.fill_information(
                     data["first_name"],
                     data["last_name"],
