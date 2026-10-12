@@ -1,0 +1,37 @@
+[
+  {
+    "scenario": "TC-LOG-001: Login Success - Valid Credentials",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "is_valid": true,
+    "expected_url": "inventory.html"
+  },
+  {
+    "scenario": "TC-LOG-002: Login Failed - Wrong Password",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "is_valid": false,
+    "expected_error": "Epic sadface: Username and password do not match any user in this service"
+  },
+  {
+    "scenario": "TC-LOG-003: Login Failed - Locked Out User",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "is_valid": false,
+    "expected_error": "Epic sadface: Sorry, this user has been locked out."
+  },
+  {
+    "scenario": "TC-LOG-004: Login Failed - Empty Username",
+    "username": "",
+    "password": "secret_sauce",
+    "is_valid": false,
+    "expected_error": "Epic sadface: Username is required"
+  },
+  {
+    "scenario": "TC-LOG-005: Login Failed - Empty Password",
+    "username": "standard_user",
+    "password": "",
+    "is_valid": false,
+    "expected_error": "Epic sadface: Password is required"
+  }
+]

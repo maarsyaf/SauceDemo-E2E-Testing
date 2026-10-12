@@ -1,0 +1,23 @@
+[
+  {
+    "scenario": "TC-CHK-001: Checkout Failed - Empty First Name",
+    "first_name": "",
+    "last_name": "Doe",
+    "postal_code": "12345",
+    "expected_error": "Error: First Name is required"
+  },
+  {
+    "scenario": "TC-CHK-002: Checkout Failed - Empty Last Name",
+    "first_name": "John",
+    "last_name": "",
+    "postal_code": "12345",
+    "expected_error": "Error: Last Name is required"
+  },
+  {
+    "scenario": "TC-CHK-003: Checkout Failed - Empty Postal Code",
+    "first_name": "John",
+    "last_name": "Doe",
+    "postal_code": "",
+    "expected_error": "Error: Postal Code is required"
+  }
+]
